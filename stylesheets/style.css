@@ -61,9 +61,72 @@ h6 {
   color: #3e52a3;
 }
 
+.circle {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 0.5rem;
+  background-color: #dddbff;
+  margin-left: auto;
+}
+
+.col-left {
+  background-color: #1d2c67;
+  border-radius: 0.5rem;
+  padding: 2.4rem;
+  border-top-right-radius: 6rem;
+}
+
+.col-right {
+  background-color: #1d2c67;
+  border-radius: 0.5rem;
+  padding: 2.4rem;
+  margin-top: 2.75rem;
+}
+
 .container {
   max-width: 100%;
+  background: url("../images/bg-desktop.png"), #0c122c;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+.icons {
   background-color: #0c122c;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
+
+.progress {
+  border-radius: 1rem;
+  padding: 0.12rem;
+  background-color: #0c122c;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #ffa399, #ff4d97);
+  border-radius: 1rem;
+  padding-right: 2px;
+}
+
+.usage {
+  color: #848794;
+}
+.usage span {
+  color: #dddbff;
+}
+
+.w-81 {
+  width: 81.5%;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1.5rem;
+    background: url("../images/bg-mobile.png");
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
