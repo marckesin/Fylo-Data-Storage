@@ -79,6 +79,7 @@ main {
   box-shadow: rgba(0, 0, 0, 0.4) 0 30px 90px;
   border-top-right-radius: 6rem;
   padding: 2.4rem;
+  width: 100%;
 }
 
 .col-right {
@@ -166,6 +167,11 @@ main {
   width: 81.5%;
 }
 
+@media (min-width: 1400px) {
+  main {
+    width: 50%;
+  }
+}
 @media (max-width: 600px) {
   main {
     width: 100%;
