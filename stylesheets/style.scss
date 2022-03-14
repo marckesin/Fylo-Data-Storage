@@ -42,6 +42,7 @@ main {
   @include shadow();
   border-top-right-radius: 6rem;
   padding: 2.4rem;
+  width: 100%;
 }
 
 .col-right {
@@ -130,6 +131,12 @@ main {
 
 .w-81 {
   width: 81.5%;
+}
+
+@media (min-width: 1400px) {
+  main {
+    width: 50%;
+  }
 }
 
 @media (max-width: 600px) {
