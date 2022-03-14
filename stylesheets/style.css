@@ -52,6 +52,10 @@ h6 {
   overflow-wrap: break-word;
 }
 
+main {
+  width: 65%;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -72,15 +76,17 @@ h6 {
 .col-left {
   background-color: #1d2c67;
   border-radius: 0.5rem;
-  padding: 2.4rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   border-top-right-radius: 6rem;
+  padding: 2.4rem;
 }
 
 .col-right {
   background-color: #1d2c67;
   border-radius: 0.5rem;
-  padding: 2.4rem;
-  margin-top: 2.75rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  position: relative;
+  padding: 2rem 2.4rem;
 }
 
 .container {
@@ -97,12 +103,19 @@ h6 {
   height: 3rem;
   border-radius: 0.5rem;
   margin-right: 1rem;
+  cursor: pointer;
+}
+
+.pale-blue {
+  color: #dddbff;
+  font-size: 0.875rem;
 }
 
 .progress {
   border-radius: 1rem;
   padding: 0.12rem;
   background-color: #0c122c;
+  height: 1.25rem;
 }
 
 .progress-bar {
@@ -111,8 +124,39 @@ h6 {
   padding-right: 2px;
 }
 
+.fylo-tooltip {
+  content: "";
+  position: absolute;
+  top: -2.5rem;
+  right: 2.2rem;
+  height: 3.5rem;
+  width: 9rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  padding: 0.5rem 1.2rem;
+  z-index: 2;
+}
+.fylo-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+}
+.fylo-tooltip h1,
+.fylo-tooltip p {
+  margin: auto;
+}
+.fylo-tooltip p {
+  font-size: 0.65rem;
+  color: #848794;
+}
+
 .usage {
   color: #848794;
+  font-size: 0.875rem;
 }
 .usage span {
   color: #dddbff;
@@ -123,9 +167,34 @@ h6 {
 }
 
 @media (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+
+  .col-right {
+    margin-top: 1rem;
+    text-align: center;
+    padding: 2rem 2.4rem 3rem;
+  }
+
   .container {
-    padding: 0 1.5rem;
+    padding: 0 1.5rem !important;
     background: url("../images/bg-mobile.png");
+  }
+
+  .fylo-tooltip {
+    top: unset;
+    right: unset;
+    bottom: 0;
+    width: unset;
+    height: 4rem;
+    transform: translate(50%, 50%);
+  }
+  .fylo-tooltip::after {
+    all: unset;
+  }
+  .fylo-tooltip h1 {
+    font-size: 2rem;
   }
 }
 
