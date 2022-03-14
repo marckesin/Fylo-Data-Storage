@@ -6,10 +6,17 @@ $grayish-blue: hsl(229, 7%, 55%);
 $dark-blue: hsl(228, 56%, 26%);
 $very-dark-blue: hsl(229, 57%, 11%);
 
-@mixin back-border-pad {
+@mixin back-border {
   background-color: $dark-blue;
   border-radius: 0.5rem;
-  padding: 2.4rem;
+}
+
+@mixin shadow {
+  box-shadow: rgba(0, 0, 0, 0.4) 0 30px 90px;
+}
+
+main {
+  width: 65%;
 }
 
 .attribution {
@@ -31,13 +38,17 @@ $very-dark-blue: hsl(229, 57%, 11%);
 }
 
 .col-left {
-  @include back-border-pad();
+  @include back-border();
+  @include shadow();
   border-top-right-radius: 6rem;
+  padding: 2.4rem;
 }
 
 .col-right {
-  @include back-border-pad();
-  margin-top: 2.75rem;
+  @include back-border();
+  @include shadow();
+  position: relative;
+  padding: 2rem 2.4rem;
 }
 
 .container {
@@ -54,12 +65,19 @@ $very-dark-blue: hsl(229, 57%, 11%);
   height: 3rem;
   border-radius: 0.5rem;
   margin-right: 1rem;
+  cursor: pointer;
+}
+
+.pale-blue {
+  color: $pale-blue;
+  font-size: 0.875rem;
 }
 
 .progress {
   border-radius: 1rem;
   padding: 0.12rem;
   background-color: $very-dark-blue;
+  height: 1.25rem;
 }
 
 .progress-bar {
@@ -68,8 +86,42 @@ $very-dark-blue: hsl(229, 57%, 11%);
   padding-right: 2px;
 }
 
+.fylo-tooltip {
+  content: "";
+  position: absolute;
+  top: -2.5rem;
+  right: 2.2rem;
+  height: 3.5rem;
+  width: 9rem;
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 100%);
+  padding: 0.5rem 1.2rem;
+  z-index: 2;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1rem;
+    right: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent hsl(0, 0%, 100%) transparent transparent;
+  }
+
+  h1,
+  p {
+    margin: auto;
+  }
+
+  p {
+    font-size: 0.65rem;
+    color: $grayish-blue;
+  }
+}
+
 .usage {
   color: $grayish-blue;
+  font-size: 0.875rem;
 
   span {
     color: $pale-blue;
@@ -81,8 +133,35 @@ $very-dark-blue: hsl(229, 57%, 11%);
 }
 
 @media (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+
+  .col-right {
+    margin-top: 1rem;
+    text-align: center;
+    padding: 2rem 2.4rem 3rem;
+  }
+
   .container {
-    padding: 0 1.5rem;
+    padding: 0 1.5rem !important;
     background: url("../images/bg-mobile.png");
+  }
+
+  .fylo-tooltip {
+    top: unset;
+    right: unset;
+    bottom: 0;
+    width: unset;
+    height: 4rem;
+    transform: translate(50%, 50%);
+
+    &::after {
+      all: unset;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
   }
 }
