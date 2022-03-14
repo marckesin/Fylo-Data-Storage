@@ -12,7 +12,7 @@ $very-dark-blue: hsl(229, 57%, 11%);
 }
 
 @mixin shadow {
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 30px 90px;
 }
 
 main {
